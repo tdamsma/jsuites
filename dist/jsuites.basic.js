@@ -3470,7 +3470,7 @@ jSuites.mask = (function() {
     var pieces = [];
 
     obj.run = function(value, mask, decimal) {
-        if (value && mask) {
+        if (jSuites.isNumeric(value) && mask) {
             if (! decimal) {
                 decimal = '.';
             }
@@ -4164,7 +4164,9 @@ jSuites.modal.mouseDownControls = function(e) {
     }
 }
 
-
+jSuites.isNumeric = function (num) {
+    return !isNaN(num)
+}
 
 
     return jSuites;
